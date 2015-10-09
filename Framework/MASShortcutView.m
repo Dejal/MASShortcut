@@ -138,7 +138,7 @@ static const CGFloat MASButtonFontSize = 11;
     [self setNeedsDisplay:YES];
 
     // Give VoiceOver users feedback on the result. Requires at least 10.9 to run.
-    if (_recording == NO && (&NSAccessibilityPriorityKey != NULL)) {
+    if (_recording == NO /*&& (&NSAccessibilityPriorityKey != NULL)*/) {
         NSString* msg = _shortcutValue ?
                          MASLocalizedString(@"Shortcut set", @"VoiceOver: Shortcut set") :
                          MASLocalizedString(@"Shortcut cleared", @"VoiceOver: Shortcut cleared");

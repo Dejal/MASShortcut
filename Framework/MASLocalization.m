@@ -13,5 +13,12 @@ NSString *MASLocalizedString(NSString *key, NSString *comment) {
 #else
     frameworkBundle = [NSBundle bundleForClass:[MASShortcut class]];
 #endif
-    return [frameworkBundle localizedStringForKey:key value:@"XXX" table:@"Localizable"];
+    NSString *string = [frameworkBundle localizedStringForKey:key value:@"XXX" table:@"Localizable"];
+    
+    if ([string isEqualToString:@"XXX"])
+    {
+        string = key;
+    }
+    
+    return string;
 }
